@@ -8,12 +8,14 @@ for i in range(0, number) :
 	intarray.append(num)
 
 for i in range(0, number) :
-	key = intarray[i]
-	j = i-1
-	while j >=0 and key < intarray[j]:
-		intarray[j+1] = intarray[j]
-		j -= 1
-	intarray[j+1] = key
+	minvalue = intarray[i]
+	index = i
+	for j in range(i+1, number):
+		if minvalue > intarray[j]:
+			minvalue = intarray[j]
+			index = j
+	intarray[index] = intarray[i]
+	intarray[i] = minvalue
 
 print "sorted array is"
 for i in range(0, number):
