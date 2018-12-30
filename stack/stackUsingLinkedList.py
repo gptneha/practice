@@ -1,5 +1,4 @@
 
-
 class Node:
     def __init__(self, data) :
         self.data = data
@@ -50,26 +49,32 @@ class LL:
         return 1 + self.countNodesInLinkedListRecursive(node.next) 
     def countRecursive(self) :
         return self.countNodesInLinkedListRecursive(self.head)
+    def pop(self) :
+        temp = self.head
+        if (temp == None) :
+            return self.head
+        if (temp.next == None) :
+            head = None
+            return head
+        while (temp.next.next is not None) :
+            print "in loop"
+            temp = temp.next
+        temp.next = None
+        return self
 
-if __name__ == '__main__' :
-    llist = LL() 
-  
-    llist.head  = Node(1) 
-    second = Node(2) 
-    third  = Node(3)
-llist.head.next = second
-second.next = third
-llist.printList()
-llist.insertNodeAtFront(4)
-print "printing after insertion"
-llist.printList()
-llist.insertNodeAtEnd(5)
-print "printing after insertion at end"
-llist.printList()
-llist.insertAtIndex(6, 2)
-print "prnting list after inserting at index 3"
-llist.printList()
-llist.countNodesInLinkedList()
-count = llist.countRecursive()
-print "count recursive is " ,  count
-
+if __name__ == "__main__":
+    linkedList = LL()
+    linkedList.head = Node(1)
+    node2 = Node(2)
+    node3 = Node(3)
+    node4 = Node(4)
+    node5 = Node(5)
+    linkedList.head.next = node2
+    node2.next = node3
+    node3.next = node4
+    node4.next = node5
+    linkedList.printList()
+    print "inserting node 6 at the end"
+    linkedList.insertNodeAtEnd(6)
+    linkedList.pop()
+    print "popped one element" , linkedList.printList()
