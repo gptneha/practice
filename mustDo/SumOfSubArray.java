@@ -77,5 +77,6 @@ class SumOfSubArray {
                 ans = 0;
             }
         }
+        sc.close();
 	}
 }
