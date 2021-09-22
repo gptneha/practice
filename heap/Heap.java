@@ -44,6 +44,12 @@ public class Heap {
             }
             System.out.println("");
         }
+        extractMax(a);
+        System.out.println("After extracting max ") ;
+        for (int j = 0; j < a.length ; j ++) {
+            System.out.print(a[j]);
+            System.out.print(" , ");
+        }
     }
 
     public static int[] maxHeapify(int[] a, int i) {
@@ -78,15 +84,20 @@ public class Heap {
             System.out.println("Swap with left child  " + a[leftChild] + " " + a[rightChild]);
         }
         //swap with parent
-        System.out.println("Swaping elements Index1 " + i + " index2 " + maxIndex);
+        System.out.println("Swapping elements Index1 " + i + " index2 " + maxIndex);
         int temp = a[i];
         a[i] = a[maxIndex];
         a[maxIndex] = temp;
         a = maxHeapify(a, maxIndex);
+    
         return a;
     }
 
-    // public static extractMax(int[] a) {
-
-    // }
+    public static void extractMax(int[] a) {
+        // swap last element in the array with 0th element and then call maxHeapify for 0th element
+        int lastIndex = a.length - 1;
+        int temp = a[0];
+        a[0] = a[lastIndex];
+        maxHeapify(a, 0);
+    }
 }
