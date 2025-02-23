@@ -101,7 +101,32 @@ def reach(x, m, n):
 stressTesting = False
 
 
+implement below over weekend -
+1. Stack 
+    using array
+    using linked list
+    See the internal implementation of the python
+2. Queue
+    using array
+    using linked list
+    See the internal implementation of the python
+3. Heap
+    From array in array
+    From array and in keep it in tree
+4. Binary Tree from Array
+5. Graph Cyclic
+6. BFS - implement BFS
+7. DFS - implement DFS
+8 Binary Tree Creation
+    Post, in , Pre, order level Order Traversal iteratively and recursively
 
+
+
+
+Things to revise  
+1. Implementation of Trie
+2. Suffix Tree - Store all suffix of a given word in trie
+3. Rabin Karp - 
 
 
     
